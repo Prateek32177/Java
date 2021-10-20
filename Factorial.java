@@ -12,10 +12,12 @@ public class Factorial {
 	}
 	
 	public int getIterativeFactorial(int n) {
-		if (n < 0) return -1;
-		int fact = 1;
-		for (int i = 1; i <= n; i++)
-			fact *= i;
-		return fact;
+		int f[] = new int[n+1];
+		int i;
+		f[0] = 1;
+	
+		for(i=1;i<=n;i++)
+			f[i] = i * f[i-1];
+		return f[n];
 	}
 }
